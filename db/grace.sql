@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2020 at 11:19 AM
+-- Generation Time: Sep 28, 2020 at 02:29 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `top_grace_gas`
+-- Database: `grace`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +33,7 @@ CREATE TABLE `admin` (
   `password` varchar(70) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(70) NOT NULL,
+  `user_type` varchar(50) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,38 +41,10 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `username`, `password`, `name`, `email`, `status`) VALUES
-(1, 'Micheal1234', '639bae9ac6b3e1a84cebb7b403297b79', 'Peter', 'Petermicheal@gmail.com', 1),
-(2, 'Modried1234', 'f970e2767d0cfe75876ea857f92e319b', 'Zungwe', 'zungwemodried@gmail.com', 1),
-(3, 'Mary5050', 'f970e2767d0cfe75876ea857f92e319b', 'Job', 'Maryjob@gmail.com', 1),
-(4, 'Joy4040', 'f970e2767d0cfe75876ea857f92e319b', 'josh', 'joshjoy@gmail.com', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `concessions`
---
-
-CREATE TABLE `concessions` (
-  `concession_id` int(11) NOT NULL,
-  `amount` varchar(10) NOT NULL,
-  `plan` varchar(10) NOT NULL,
-  `tran_rand_id` int(11) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `concessions`
---
-
-INSERT INTO `concessions` (`concession_id`, `amount`, `plan`, `tran_rand_id`, `status`) VALUES
-(29, '100', 'Instant', 1600701511, 0),
-(30, '100', 'Instant', 1600701547, 0),
-(31, '100', 'Save', 1600701555, 0),
-(32, '100', 'Save', 1600701555, 0),
-(33, '0', 'Instant', 1600701565, 0),
-(34, '100', 'Save', 1600702511, 0),
-(35, '100', 'Save', 1600702511, 0);
+INSERT INTO `admin` (`admin_id`, `username`, `password`, `name`, `email`, `user_type`, `status`) VALUES
+(1, 'Micheal', '6b2ded51d81a4403d8a4bd25fa1e57ee', 'Peter', 'Petermicheal@gmail.com', 'admin', 1),
+(2, 'Modried', '6b2ded51d81a4403d8a4bd25fa1e57ee', 'Zungwe', 'zungwemodried@gmail.com', 'admin', 1),
+(3, 'Mary', '6b2ded51d81a4403d8a4bd25fa1e57ee', 'Job', 'Maryjob@gmail.com', 'super', 1);
 
 -- --------------------------------------------------------
 
@@ -81,7 +54,7 @@ INSERT INTO `concessions` (`concession_id`, `amount`, `plan`, `tran_rand_id`, `s
 
 CREATE TABLE `customers` (
   `customer_id` int(11) NOT NULL,
-  `customer_serial_number` varchar(50) NOT NULL,
+  `customer_serial_number` varchar(10) NOT NULL,
   `customer_number` varchar(50) NOT NULL,
   `customer_gender` varchar(10) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
@@ -99,10 +72,9 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_serial_number`, `customer_number`, `customer_gender`, `customer_name`, `customer_email`, `customer_address`, `customer_plan_id`, `customer_card`, `customer_calculator`, `customer_date`, `customer_status`) VALUES
-(12, 'TG-682131', '009494994', 'Female', 'Lyon', 'eliakimmodried@gmail.com', 'kmd 5', 1, '', '0', '2020-09-21 14:53:35', 1),
-(19, 'TG-471616', '09049494994', 'Female', 'modried', 'eliakimmodried@gmail.com', 'nnn', 2, '', '300', '2020-09-21 15:35:12', 1),
-(20, 'TG-460807', '009494994', 'Female', 'Lyon', 'eliakimmodried@gmail.com', '74834783478347 jdjjsdjd', 2, '', '400', '2020-09-21 15:19:15', 1),
-(23, 'TG-555287', '09049494994', 'Male', 'zungwe', 'modriedterue@gmail.com', 'km 4 adrees', 2, '', '', '2020-09-21 15:36:36', 1);
+(12, 'TG-682131', '009494994', 'Female', 'Terfa Modried', 'eliakimmodried@gmail.com', 'kmd 5', 2, '', '200', '2020-09-26 22:20:22', 1),
+(20, 'TG-460807', '009494994', 'Female', 'Lyon', 'eliakimmodried@gmail.com', '74834783478347 jdjjsdjd', 1, '', '', '2020-09-26 22:20:11', 1),
+(25, 'TG-460807', '090949494949', 'Male', 'Michael', 'Michael@gmail.com', 'km 4 makurdi Benue state', 1, '', '', '2020-09-26 22:20:01', 1);
 
 -- --------------------------------------------------------
 
@@ -132,7 +104,7 @@ INSERT INTO `plans` (`plan_id`, `plan`, `plan_status`) VALUES
 
 CREATE TABLE `set_concession` (
   `concession_id` int(11) NOT NULL,
-  `set` decimal(4,0) NOT NULL,
+  `amount` varchar(5) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -140,8 +112,8 @@ CREATE TABLE `set_concession` (
 -- Dumping data for table `set_concession`
 --
 
-INSERT INTO `set_concession` (`concession_id`, `set`, `status`) VALUES
-(1, '100', 1);
+INSERT INTO `set_concession` (`concession_id`, `amount`, `status`) VALUES
+(1, '50', 1);
 
 -- --------------------------------------------------------
 
@@ -160,7 +132,7 @@ CREATE TABLE `set_kg_price` (
 --
 
 INSERT INTO `set_kg_price` (`kg_id`, `price`, `status`) VALUES
-(1, '400', 1);
+(1, '80', 1);
 
 -- --------------------------------------------------------
 
@@ -183,6 +155,9 @@ CREATE TABLE `todo` (
 
 CREATE TABLE `transactions` (
   `transaction_id` int(11) NOT NULL,
+  `c_amount` varchar(5) NOT NULL,
+  `c_id` int(2) NOT NULL,
+  `c_status` int(11) NOT NULL DEFAULT 0,
   `price` varchar(5) NOT NULL,
   `kg` varchar(20) NOT NULL,
   `total_amount` varchar(10) NOT NULL,
@@ -197,12 +172,31 @@ CREATE TABLE `transactions` (
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`transaction_id`, `price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`, `time`, `date`, `status`) VALUES
-(47, '400', '7', '2800', 'TG-682131', 1, '1600701511', '2020-09-21 15:18:31', 0),
-(48, '400', '8', '3200', 'TG-682131', 1, '1600701547', '2020-09-21 15:19:07', 0),
-(49, '400', '8', '3200', 'TG-460807', 1, '1600701555', '2020-09-21 15:19:16', 0),
-(50, '400', '3', '1200', 'TG-682131', 1, '1600701565', '2020-09-21 15:19:25', 0),
-(51, '400', '7', '2800', 'TG-471616', 1, '1600702511', '2020-09-21 15:35:12', 0);
+INSERT INTO `transactions` (`transaction_id`, `c_amount`, `c_id`, `c_status`, `price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`, `time`, `date`, `status`) VALUES
+(70, '100', 1, 1, '400', '9', '3600', 'TG-460807', 1, '1601122204', '2020-09-26 12:10:04', 0),
+(71, '0', 2, 2, '400', '3', '1200', 'TG-682131', 1, '1601122227', '2020-09-26 12:10:27', 0),
+(72, '0', 1, 2, '400', '3', '1200', 'TG-460807', 1, '1601122238', '2020-09-26 12:10:38', 0),
+(73, '100', 2, 0, '400', '6', '2400', 'TG-682131', 1, '1601122249', '2020-09-26 12:10:49', 0),
+(74, '100', 1, 1, '400', '9', '3600', 'TG-460807', 1, '1601127033', '2020-09-26 13:30:33', 0),
+(75, '100', 1, 1, '400', '8', '3200', 'TG-460807', 1, '1601127363', '2020-09-26 13:36:03', 0),
+(76, '0', 1, 2, '400', '2', '800', 'TG-460807', 1, '1601127371', '2020-09-26 13:36:11', 0),
+(77, '100', 1, 1, '400', '5', '2000', 'TG-99059', 1, '1601127640', '2020-09-26 13:40:40', 0),
+(78, '100', 2, 0, '400', '5', '2000', 'TG-682131', 1, '1601127707', '2020-09-26 13:41:47', 0),
+(79, '100', 2, 0, '400', '7', '2800', 'TG-682131', 1, '1601139886', '2020-09-26 17:04:46', 0),
+(80, '100', 1, 1, '400', '9', '3600', 'TG-460807', 1, '1601122204', '2020-09-26 12:10:04', 0),
+(81, '0', 2, 2, '400', '3', '1200', 'TG-682131', 1, '1601122227', '2020-09-26 12:10:27', 0),
+(82, '0', 1, 2, '400', '3', '1200', 'TG-460807', 1, '1601122238', '2020-09-26 12:10:38', 0),
+(83, '100', 2, 0, '400', '6', '2400', 'TG-682131', 1, '1601122249', '2020-09-26 12:10:49', 0),
+(84, '100', 1, 1, '400', '9', '3600', 'TG-460807', 1, '1601127033', '2020-09-26 13:30:33', 0),
+(85, '100', 1, 1, '400', '8', '3200', 'TG-460807', 1, '1601127363', '2020-09-26 13:36:03', 0),
+(86, '0', 1, 2, '400', '2', '800', 'TG-460807', 1, '1601127371', '2020-09-26 13:36:11', 0),
+(87, '100', 1, 1, '400', '5', '2000', 'TG-99059', 1, '1601127640', '2020-09-26 13:40:40', 0),
+(88, '100', 2, 0, '400', '5', '2000', 'TG-682131', 1, '1601127707', '2020-09-26 13:41:47', 0),
+(89, '100', 2, 0, '400', '7', '2800', 'TG-682131', 1, '1601139886', '2020-09-26 17:04:46', 0),
+(90, '0', 2, 2, '400', '4', '1600', 'TG-682131', 4, '1601158432', '2020-09-26 22:13:52', 0),
+(91, '0', 0, 2, '400', '', '0', '', 1, '1601236933', '2020-09-27 20:02:13', 0),
+(92, '0', 0, 2, '400', '', '0', '', 1, '1601236942', '2020-09-27 20:02:22', 0),
+(93, '0', 0, 2, '60', '', '0', '', 1, '1601236960', '2020-09-27 20:02:40', 0);
 
 --
 -- Indexes for dumped tables
@@ -213,12 +207,6 @@ INSERT INTO `transactions` (`transaction_id`, `price`, `kg`, `total_amount`, `tr
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
-
---
--- Indexes for table `concessions`
---
-ALTER TABLE `concessions`
-  ADD PRIMARY KEY (`concession_id`);
 
 --
 -- Indexes for table `customers`
@@ -267,16 +255,10 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `concessions`
---
-ALTER TABLE `concessions`
-  MODIFY `concession_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
---
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `plans`
@@ -306,7 +288,7 @@ ALTER TABLE `todo`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
