@@ -33,7 +33,6 @@
                                                         <th> Kg </th>
                                                         <th> Price </th>
                                                         <th> Total Amount </th>
-                                                        <th> Time</th>
                                                         <th> Date </th>
                                                     </tr>
                                                     </thead>
@@ -49,7 +48,6 @@
                                                             <td> <?php echo $row['kg']  ?></td>
                                                             <td> <?php echo $this->format_money($row['price'],true) ?></td>
                                                             <td> <?php  echo $this->format_money($row['total_amount'],true) ?></td>
-                                                            <td> <?php  echo $this->time_ago($row['time']); ?></td>
                                                             <td> <?php echo $row['date'];  ?></td>
                                                         </tr>
                                                         <?php

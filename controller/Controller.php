@@ -85,6 +85,16 @@ class MainController extends  DatabaseConnect{
         }
         return $status;
     }
+    public function admin_status($var){
+        if($var == 1){
+            $status = 'Grant Access';
+        }else if($var == 0){
+            $status = 'Block Access';
+        }else{
+            $status = ' None ';
+        }
+        return $status;
+    }
     public function select($tbl,$where,$action,$field){
         $sql = "SELECT `$field` FROM `$tbl` WHERE `$where`='$action'";
         $run = $this->run($sql);

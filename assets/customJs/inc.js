@@ -1,3 +1,84 @@
+$("#admin_update_form").validate({
+    // Specify validation rules
+    rules: {
+        username: "required",
+        id: "required",
+        name: "required",
+        phone: "required",
+        address: "required",
+        status: "required",
+        user_type: "required",
+        //email: ""
+    },
+    // Specify validation error messages
+    messages: {
+        username: "Field Required",
+        id: "Field Required",
+        name: "Field Required",
+        phone: "Field Required",
+        address: "Field Required",
+        status: "Field Required",
+        user_type: "Field Required",
+        // email: "Field Required"
+    },
+    submitHandler: func_update_admin,
+});
+function func_update_admin(){
+    var data = $("#admin_update_form").serialize();
+    var btn = $("#btn_update_admin");
+    AjaxSendData("inc/inc_update.php?update=update_admin",data,btn," Submitting Data ...").done(function(response){
+        if (response){
+            Msg("<i class='fa fa-check-circle-o'></i>&nbsp;Successful Updated","alert-success text-center",1,"#msg",5000);
+            setTimeout(function(){
+                window.location="?p=all_admin";
+            },5000)
+        }else{
+            Msg("<i class='fa fa-warning'></i>&nbsp;Unsuccessful Updated","alert-danger text-center",1,"#msg",5000);
+            $(btn).prop('disabled', false);
+            $(btn).html('Add <i class="fa fa-user-plus"></i>');
+        }
+    });
+}
+
+$("#add_admin_form").validate({
+    // Specify validation rules
+    rules: {
+        username: "required",
+        name: "required",
+        phone: "required",
+        address: "required",
+        user_type: "required",
+        //email: ""
+    },
+    // Specify validation error messages
+    messages: {
+        username: "Field Required",
+        name: "Field Required",
+        phone: "Field Required",
+        address: "Field Required",
+        user_type: "Field Required",
+        // email: "Field Required"
+
+
+    },
+    submitHandler: func_add_admin,
+});
+function func_add_admin(){
+    var data = $("#add_admin_form").serialize();
+    var btn = $("#btn_add_admin");
+    AjaxSendData("inc/inc_insert.php?insert=add_admin",data,btn," Submitting Data ...").done(function(response){
+        if (response){
+            swal("Added!", "Successfully added.", "success");
+            setTimeout(function(){
+                window.location="?p=all_admin";
+            },5000)
+        }else{
+            swal("Cancelled", "Unsuccessfully added:)", "error");
+            $(btn).prop('disabled', false);
+            $(btn).html('Add <i class="fa fa-user-plus"></i>');
+        }
+    });
+}
 $("#update_kg_price").validate({
     // Specify validation rules
     rules: {
@@ -79,6 +160,40 @@ function func_delete_customer_(id) {
         function (isConfirm) {
             if (isConfirm == true) {
                 AjaxSendData("inc/inc_delete.php?delete=delete_customer", {id: id}, btn, " Deleting... ").done(function (response) {
+                    if (response == 1) {
+                        swal("Deleted!", "Your imaginary record has been deleted.", "success");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 5000);
+                    } else {
+                        swal("Cancelled", "Your imaginary record unable to delete:)", "error");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 5000);
+                    }
+                });
+            } else {
+                swal("Cancelled", "Your imaginary record is safe :)", "error");
+            }
+        });
+}
+function func_delete_admin_(id) {
+    var id = parseInt(id);
+    var btn = $("#btn_delete_admin_" + id);
+    swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this imaginary record!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+        function (isConfirm) {
+            if (isConfirm == true) {
+                AjaxSendData("inc/inc_delete.php?delete=delete_admin", {id: id}, btn, " Deleting... ").done(function (response) {
                     if (response == 1) {
                         swal("Deleted!", "Your imaginary record has been deleted.", "success");
                         setTimeout(function () {
@@ -271,9 +386,6 @@ function func_update_customer(){
         }
     });
 }
-// end session validation here
-/** END FUNCTIONS FOR ADDING FORMS  **/
-/** END FUNCTIONS FOR ADDING FORMS  **/
 
 function func_customer_modal(table_id) {
     var id = table_id;
@@ -286,6 +398,21 @@ function func_customer_modal(table_id) {
             success:function(data){
                 $('.modal-body').html(data);
                 $('#customer_modal').modal('show');
+            }
+        });
+    }
+}
+function func_admin_modal(table_id) {
+    var id = table_id;
+    if(id != '')
+    {
+        $.ajax({
+            url:"inc/inc_update.php?update=admin_modal",
+            method:"POST",
+            data:{id:id},
+            success:function(data){
+                $('.modal-body').html(data);
+                $('#admin_modal').modal('show');
             }
         });
     }

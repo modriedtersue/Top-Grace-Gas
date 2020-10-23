@@ -6,6 +6,10 @@ if(isset($_GET['delete']) && $_GET['delete'] !== ""){
             $id = $main->clean($_POST['id']);
            echo $main->run("DELETE FROM `customers` WHERE `customers`.`customer_id` ='$id'")?1:0;
             break;
+        case "delete_admin":
+            $id = $main->clean($_POST['id']);
+            echo $main->run("DELETE FROM `admin` WHERE `admin`.`admin_id` ='$id'")?1:0;
+            break;
     }
 }else{
     return false;

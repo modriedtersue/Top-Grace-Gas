@@ -340,6 +340,16 @@ $main->user_not_login('login.php');
                                 <span class="title">Change Password</span>
                             </a>
                         </li>
+                        <li class="nav-item <?php echo $pages->active("add_admin");?>">
+                            <a href="?p=add_admin" class="nav-link nav-toggle"> <i class="icon-lock"></i>
+                                <span class="title">Add Admin </span>
+                            </a>
+                        </li>
+                        <li class="nav-item <?php echo $pages->active("all_admin");?>">
+                            <a href="?p=all_admin" class="nav-link nav-toggle"> <i class="icon-lock"></i>
+                                <span class="title">All Admin </span>
+                            </a>
+                        </li>
                         <?php
                         if($_SESSION['login_user_type'] == 'super'){
                             ?>

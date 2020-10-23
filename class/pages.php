@@ -32,6 +32,12 @@ class pages extends MainController {
                 case 'admin_settings':
                     $this->require_page("pages/admin/settings.php");
                     break;
+                case 'add_admin':
+                    $this->require_page("pages/admin/add_admin.php");
+                    break;
+                case 'all_admin':
+                    $this->require_page("pages/admin/all_admin.php");
+                    break;
                 default:
                     $this->require_page("pages/error_page.php");
                     break;
@@ -67,6 +73,12 @@ class pages extends MainController {
                     break;
                 case 'view_user_transaction':
                     $title = ".:: View User Transaction  ::.";
+                    break;
+                case 'add_admin':
+                    $title = ".:: Add Admin ::.";
+                    break;
+                case 'all_admin':
+                    $title = ".::  All Admin ::.";
                     break;
                 default:
                     echo "404 title not found";

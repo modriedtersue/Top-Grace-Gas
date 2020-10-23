@@ -54,6 +54,90 @@ case "update_customer":
     $address = $main->clean($_POST['address']);
     echo $main->run("UPDATE `customers` SET `customer_serial_number` = '$customer_id', `customer_number` = '$phone', `customer_gender` = '$gender', `customer_name` = '$name', `customer_email` = '$email', `customer_address` = '$address', `customer_plan_id` = '$plan' WHERE `customers`.`customer_id` ='$id'")?1:0;
     break;
+case "update_admin":
+    $id = $main->clean($_POST['id']);
+    $username = $main->clean($_POST['username']);
+    $name = $main->clean($_POST['name']);
+    $email = $main->clean($_POST['email']);
+    $phone = $main->clean($_POST['phone']);
+    $status = $main->clean($_POST['status']);
+    $user_type = $main->clean($_POST['user_type']);
+    $address = $main->clean($_POST['address']);
+    echo $main->run("UPDATE `admin` SET `username` = '$username',`name` = '$name', `address` = '$address', `phone` = '$phone', `email` = '$email', `user_type` = '$user_type', `status` = '$status' WHERE `admin`.`admin_id` ='$id'")?1:0;
+
+case "admin_modal":
+    $table_id = $main->clean($_POST['id']);
+    $query = $main->run("SELECT * FROM `admin` WHERE `admin_id`='$table_id'");
+    $row_qry = $main->fetch($query);
+    ?>
+    <div class="form-body">
+        <div id="msg"></div>
+        <div class="form-group row">
+            <input type="hidden" name="id" id="id" value="<?php echo $table_id ?>" readonly>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-3"> Admin Username <span class="required"> * </span></label>
+            <div class="col-md-8">
+                <input type="text" name="username" id="username" s value="<?php echo $row_qry['username'] ?>" class="form-control input-height" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-3">FullName <span class="required"> * </span></label>
+            <div class="col-md-8">
+                <input type="text" name="name" id="name" value="<?php echo $row_qry['name'] ?>"  class="form-control input-height" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-3">Phone Number<span class="required"> * </span></label>
+            <div class="col-md-8">
+                <input type="number" name="phone" id="phone"  value="<?php echo $row_qry['phone'] ?>"  class="form-control input-height" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-3">Email (optional)<span class="required"> * </span></label>
+            <div class="col-md-8">
+                <input type="text" name="email" id="email" value="<?php echo $row_qry['email'] ?>" class="form-control input-height" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-3">User Type <span class="required"> * </span></label>
+            <div class="col-md-8">
+                <select class="form-control input-height" name="user_type" id="user_type">
+                    <option value="<?php echo $row_qry['user_type'] ?>"> <?php echo $row_qry['user_type'] ?> </option>
+                    <option value="admin"> Admin </option>
+                    <option value="super"> Super </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-3">Address
+                <span class="required"> * </span>
+            </label>
+            <div class="col-md-8">
+                <textarea name="address" id="address" class="form-control" rows="5"><?php echo $row_qry['address'] ?></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-3">Status <span class="required"> * </span></label>
+            <div class="col-md-8">
+                <select class="form-control input-height" name="status" id="status">
+                    <option value="<?php echo $row_qry['status'] ?>"> <?php echo $main->admin_status($row_qry['status']) ?> </option>
+                    <option value="0"> Block Access </option>
+                    <option value="1"> Grant Access </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-actions">
+            <div class="row">
+                <div class="offset-md-3 col-md-9">
+                    <button type="submit" id="btn_update_customer" class="btn btn-success pull-left">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+    break;
 case "customer_modal":
     $table_id = $main->clean($_POST['id']);
     $query = $main->run("SELECT * FROM `customers` WHERE `customer_id`='$table_id'");
