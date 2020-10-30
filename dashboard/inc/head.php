@@ -358,6 +358,11 @@ $main->user_not_login('login.php');
                                     <span class="title"> Admin  Settings </span>
                                 </a>
                             </li>
+                            <li class="nav-item <?php echo $pages->active("collection");?>">
+                                <a href="?p=collections" class="nav-link nav-toggle"> <i class="icon-settings"></i>
+                                    <span class="title"> scollections </span>
+                                </a>
+                            </li>
                             <?php
                         }else  if($_SESSION['login_user_type'] == 'admin'){
                           ?>

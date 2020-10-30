@@ -2,176 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89f0278b-37cf-4049-8c94-9be2ada3c70b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard/pages/admin/add_admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/pages/admin/all_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/customJs/inc.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/customJs/inc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/pages/admin/TC_collect.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/pages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/inc/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/inc/inc_delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/inc_delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/inc/inc_insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/inc_insert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/inc/inc_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/inc_update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/pages/admin/transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/pages/admin/transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/about-us.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/contact.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/css/bootstrap/bootstrap.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/css/font-awesome.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/css/ionicons.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/css/main.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/css/responsive.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/css/style.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ecommerce-solution.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/html-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/intro-tabs.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/logo.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/portfolio/img-1.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/portfolio/img-2.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/portfolio/img-3.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/portfolio/img-4.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/redixtouch.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/slides/1.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/slides/2.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/slides/3.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/slides/4.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/slides/5.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/images/why-choose-img.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/index.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/intro-tabs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/java-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/main.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/bootstrap.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/flexslider/jquery.flexslider-min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/jquery.isotope.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/jquery.prettyPhoto.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/jquery/jquery.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/materialize.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/modernizr.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/owl.carousel.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/own-menu.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/js/vendors/wow.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/pf-d-ecco.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/pf-d-jo.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/pf-w-admin-panel.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio-single.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/about-us.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/contact.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/css/bootstrap/bootstrap.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/css/font-awesome.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/css/ionicons.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/css/main.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/css/materialize.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/css/responsive.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/css/style.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/ecommerce-solution.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/html-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/intro-tabs.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/logo.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/portfolio/img-1.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/portfolio/img-2.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/portfolio/img-3.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/portfolio/img-4.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/redixtouch.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/slides/1.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/slides/2.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/slides/3.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/slides/4.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/slides/5.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/images/why-choose-img.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/img-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/img-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/img-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/img-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/index.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/java-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/main.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/bootstrap.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/flexslider/jquery.flexslider-min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/jquery.isotope.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/jquery.prettyPhoto.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/jquery/jquery.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/materialize.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/modernizr.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/owl.carousel.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/own-menu.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/js/vendors/wow.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/pf-d-ecco.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/pf-d-jo.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/pf-w-admin-panel.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/portfolio-single.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/portfolio.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/responsive-webdesign.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/rs-plugin/css/settings.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/rs-plugin/js/jquery.themepunch.revolution.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/rs-plugin/js/jquery.themepunch.tools.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/services.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/website-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/portfolio/website-redesign.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/redixtouch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/responsive-webdesign.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rs-plugin/css/settings.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rs-plugin/js/jquery.themepunch.revolution.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rs-plugin/js/jquery.themepunch.tools.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/services.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/about-us.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/contact.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/css/bootstrap/bootstrap.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/css/font-awesome.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/css/ionicons.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/css/main.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/css/materialize.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/css/responsive.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/css/style.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/ecommerce-solution.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/html-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/intro-tabs.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/logo.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/portfolio/img-1.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/portfolio/img-2.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/portfolio/img-3.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/portfolio/img-4.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/redixtouch.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/slides/1.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/slides/2.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/slides/3.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/slides/4.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/slides/5.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/images/why-choose-img.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/index.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/java-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/main.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/bootstrap.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/flexslider/jquery.flexslider-min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/jquery.isotope.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/jquery.prettyPhoto.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/jquery/jquery.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/materialize.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/modernizr.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/owl.carousel.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/own-menu.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/js/vendors/wow.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/pf-d-ecco.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/pf-d-jo.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/pf-w-admin-panel.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/portfolio-single.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/portfolio.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/responsive-webdesign.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/rs-plugin/css/settings.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/rs-plugin/js/jquery.themepunch.revolution.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/rs-plugin/js/jquery.themepunch.tools.min.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/services.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/website-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slides/website-redesign.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/website-development.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/website-redesign.html.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/why-choose-img.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,6 +52,7 @@
       <workItem from="1602069425188" duration="1143000" />
       <workItem from="1602082782767" duration="579000" />
       <workItem from="1602348674244" duration="25000" />
+      <workItem from="1603972559187" duration="191000" />
     </task>
     <servers />
   </component>
@@ -231,5 +64,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1601771305276" />
+    <state x="517" y="307" key="NewPhpFileDialog" timestamp="1603972627081">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="517" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1603972627081" />
   </component>
 </project>
