@@ -38,7 +38,7 @@ class pages extends MainController {
                 case 'all_admin':
                     $this->require_page("pages/admin/all_admin.php");
                     break;
-                case 'Collection':
+                case 'collections':
                     $this->require_page("pages/admin/collections.php");
                     break;
                 default:
@@ -83,8 +83,8 @@ class pages extends MainController {
                 case 'all_admin':
                     $title = ".::  All Admin ::.";
                     break;
-                case 'collection':
-                    $title = ".::  Collection ::.";
+                case 'collections':
+                    $title = ".::  Collections ::.";
                     break;
                 default:
                     echo "404 title not found";
