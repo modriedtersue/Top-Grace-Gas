@@ -9,6 +9,16 @@ class MainController extends  DatabaseConnect{
             exit;
         }
     }
+    public function price_duration($kg){
+        $run = $this->run("SELECT * FROM `set_kg_price` WHERE `status`='1'");
+        while ($row = $this->fetch($run)){
+        $done = $row['done'];
+        $dtwo = $row['dtwo'];
+            if($kg >= $done && $kg <= $dtwo){
+                echo $row['price'];
+            }
+        }
+    }
     public function verifyHash($password,$hashedPassword){
         return crypt($password, $hashedPassword) == $hashedPassword;
     }
@@ -217,7 +227,7 @@ class MainController extends  DatabaseConnect{
         }
 
     }
-
+    
     public function time_ago($time_ago){
         $cur_time 	= time();
         $time_elapsed 	= $cur_time - $time_ago;

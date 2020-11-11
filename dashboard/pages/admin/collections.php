@@ -16,66 +16,43 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="tabbable-line">
-                    <div class="tab-content">
-                        <div class="tab-pane active fontawesome-demo" id="tab1">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card card-box">
-                                        <div class="card-head">
-                                            <header>Collections Table</header>
-                                        </div>
-                                        <div class="card-body ">
-                                            <div class="table-scrollable">
-                                                <table class="table table-striped table-bordered table-hover table-checkable order-column valign-middle"
-                                                       id="exportTable">
-                                                    <thead>
-                                                    <tr>
-                                                        <th> # </th>
-                                                        <th> Customer ID </th>
-                                                        <th> Name </th>
-                                                        <th> Gender </th>
-                                                        <th> Phone </th>
-                                                        <th> Address</th>
-                                                        <th> Plan </th>
-                                                        <th> Action </th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <?php
-                                                    $no = 1;
-                                                    $run = $this->run("SELECT * FROM `customers` WHERE `customer_status`='1'");
-                                                    while ($row = $this->fetch($run)){
-                                                        ?>
-                                                        <tr class="odd gradeX">
-                                                            <td> <?php  echo $no++; ?></td>
-                                                            <td> <?php echo $row['customer_serial_number'] ?></td>
-                                                            <td> <?php echo $row['customer_name']  ?></td>
-                                                            <td> <?php echo $row['customer_gender'] ?></td>
-                                                            <td> <?php  echo $row['customer_number'] ?></td>
-                                                            <td> <?php  echo $row['customer_address'] ?></td>
-                                                            <td> <?php echo $this->plan_status($row['customer_plan_id']);  ?></td>
-                                                            <td>
-                                                                <?php  echo $this->status($row['customer_status']);?>
-                                                                <button class="btn btn-success btn-xs" onclick="func_customer_modal(<?php echo $row['customer_id'];?>)">
-                                                                    <i class="fa fa-pencil "></i>
-                                                                </button>
-                                                                <button class="btn btn-danger btn-xs" id="btn_delete_customer_<?php echo $row['customer_id'];?>" onclick="func_delete_customer_(<?php echo $row['customer_id'];?>);">
-                                                                    <i class="fa fa-trash-o "></i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="col-sm-12">
+                <div class="card card-topline-red">
+                    <div class="card-head">
+                        <header>Collection Table s</header>
+                        <div class="tools">
+                            <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                            <a class="t-collapse btn-color fa fa-chevron-down"
+                                href="javascript:;"></a>
+                            <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-scrollable">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th> # </th>
+                                        <th> Username </th>
+                                        <th> balance </th>
+                                        <th> Username </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> 1 </td>
+                                        <td> Mark </td>
+                                        <td> Otto </td>
+                                        <td> makr124 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2 </td>
+                                        <td> Jacob </td>
+                                        <td> Nilson </td>
+                                        <td> jac123 </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

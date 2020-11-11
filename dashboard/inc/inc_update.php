@@ -233,27 +233,15 @@ $row_qry = $main->fetch($query);
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3"> Name <span class="required"> * </span></label>
+        <label class="control-label col-md-3"> KG <span class="required"> * </span></label>
         <div class="col-md-8">
-            <input type="text" name="plan" id="plan" readonly value="<?php echo $row_qry['customer_name']; ?>"  class="form-control input-height" />
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="control-label col-md-3"> Plan <span class="required"> * </span></label>
-        <div class="col-md-8">
-            <input type="text" name="plan" id="plan" readonly value="<?php echo $main->select('plans','plan_id',$row_qry['customer_plan_id'],'plan'); ?>"  class="form-control input-height" />
+            <input type="number" name="kg" id="kg" onkeyup="get_total();" placeholder="e.g 7" class="form-control input-height" />
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-3"> KG Price <span class="required"> * </span></label>
         <div class="col-md-8">
             <input type="text" name="price" id="price" readonly value="<?php echo $main->get_gas_price(); ?>"  class="form-control input-height" />
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="control-label col-md-3"> KG <span class="required"> * </span></label>
-        <div class="col-md-8">
-            <input type="number" name="kg" id="kg" onkeyup="get_total();" placeholder="e.g 7" class="form-control input-height" />
         </div>
     </div>
     <div class="form-group row">
@@ -266,8 +254,8 @@ $row_qry = $main->fetch($query);
         </div>
         <div class="form-actions">
             <div class="row">
-                <div class="offset-md-3 col-md-9">
-                    <button type="submit" id="btn_buy_gas" class="btn btn-success pull-left">Pay <i class="fa fa-money"></i> </button>
+                <div class="col-md-8">
+                    <button type="submit" id="btn_buy_gas" class="btn btn-primary">Pay <i class="fa fa-money"></i> </button>
                 </div>
             </div>
         </div>
