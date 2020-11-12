@@ -15,7 +15,7 @@ class MainController extends  DatabaseConnect{
         $done = $row['done'];
         $dtwo = $row['dtwo'];
             if($kg >= $done && $kg <= $dtwo){
-                echo $row['price'];
+                return $row['price'];
             }
         }
     }

@@ -304,22 +304,14 @@ $("#transaction_buy_gas").validate({
     rules: {
         id: "required",
         customer_id: "required",
-        name: "required",
-        price: "required",
         kg: "required",
-        total: "required",
-        plan: "required",
         //email: ""
     },
     // Specify validation error messages
     messages: {
         id: "Field Required",
         customer_id: "Field Required",
-        name: "Field Required",
-        price: "Field Required",
         kg: "Field Required",
-        total: "Field Required",
-        plan: "Field Required",
         // email: "Field Required"
 
 
@@ -330,7 +322,7 @@ function func_transaction_buy_gas(){
     var data = $("#transaction_buy_gas").serialize();
     var btn = $("#btn_buy_gas");
     AjaxSendData("inc/inc_insert.php?insert=transaction_buy_gas",data,btn," Submitting Data ...").done(function(response){
-        if (response){
+        if (response == 1){
             Msg("<i class='fa fa-check-circle-o'></i>&nbsp;Successfully","alert-success text-center",1,"#msg",5000);
             setTimeout(function(){
                 window.location="?p=transactions";
@@ -338,7 +330,8 @@ function func_transaction_buy_gas(){
         }else{
             Msg("<i class='fa fa-trash'></i>&nbsp; Unsuccessfully","alert-danger text-center",1,"#msg",5000);
             $(btn).prop('disabled', false);
-            $(btn).html('Add <i class="fa fa-user-plus"></i>');
+            $(btn).html('Pay <i class="fa fa-money"></i>');
+            
         }
     });
 }
@@ -434,8 +427,12 @@ function func_buy_gas_modal(table_id) {
 }
 
 function get_total() {
-
-    var amount = 500
-    document.getElementById('total').innerHTML = amount;
-
+    var kg = $("#kg").val();
+    var kinputprice = $("#price").val();
+    $.post('inc/inc_insert.php?insert=get_price_kg',{kg:kg},function (data) {
+        var price =  $('#price').val(data);
+        var amount = parseInt(kg) * data;
+        $("#total").val(amount);
+    });
+   
 }

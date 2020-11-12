@@ -235,19 +235,19 @@ $row_qry = $main->fetch($query);
     <div class="form-group row">
         <label class="control-label col-md-3"> KG <span class="required"> * </span></label>
         <div class="col-md-8">
-            <input type="number" name="kg" id="kg" onkeyup="get_total();" placeholder="e.g 7" class="form-control input-height" />
+            <input type="number" onkeyup="get_total();" name="kg" id="kg" placeholder="e.g 7" class="form-control input-height" />
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-3"> KG Price <span class="required"> * </span></label>
         <div class="col-md-8">
-            <input type="text" name="price" id="price" readonly value="<?php echo $main->get_gas_price(); ?>"  class="form-control input-height" />
+            <input type="text" name="price" id="price" diable class="form-control input-height" />
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-3">Total<span class="required"> * </span></label>
         <div class="col-md-8">
-            <input type="text" name="total" id="total" readonly value="0" class="form-control input-height" />
+            <input type="text" name="total" id="total" diable class="form-control input-height" />
         </div>
         <div class="form-group row">
             <input type="hidden" name="id" id="id" value="<?php echo $table_id ?>" readonly>
