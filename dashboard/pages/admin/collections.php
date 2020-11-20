@@ -17,13 +17,41 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
+                <div class="card-box">
+                    <div class="card-head">
+                        <header>Select Date From & To </header>
+                    </div>
+                    <div class="card-body ">
+                        <form method="post" action="?p=collections">
+                            <div class="row">
+                                <div class="col-lg-4 p-t-20">
+                                    <div class="form-control-wrapper">
+                                        <input type="text" id="date" name="date" class="floating-label mdl-textfield__input" placeholder="Date">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 p-t-20">
+                                    <div class="form-control-wrapper">
+                                        <input type="text" id="date1" name="date1" class="floating-label mdl-textfield__input" placeholder="Date">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 p-t-20">
+                                    <button type="submit" class="btn btn-primary"> Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <div class="card card-topline-red">
                     <div class="card-head">
                         <header>Collection Table s</header>
                         <div class="tools">
                             <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                             <a class="t-collapse btn-color fa fa-chevron-down"
-                                href="javascript:;"></a>
+                               href="javascript:;"></a>
                             <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
                         </div>
                     </div>
@@ -31,26 +59,27 @@
                         <div class="table-scrollable">
                             <table class="table table-striped table-hover">
                                 <thead>
-                                    <tr>
-                                        <th> # </th>
-                                        <th> Username </th>
-                                        <th> balance </th>
-                                        <th> Username </th>
-                                    </tr>
+                                <tr>
+                                    <th> # </th>
+                                    <th> Username </th>
+                                    <th> balance </th>
+                                    <th> Username <?php echo date('y-m-d') ?>  </th>
+                                </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                $run = $this->run("SELECT * FROM transactions WHERE date_sort BETWEEN '2020-11-01' AND '2020-11-05'");
+                                while($row = $this->fetch($run)){
+                                    ?>
                                     <tr>
                                         <td> 1 </td>
-                                        <td> Mark </td>
+                                        <td> <?php echo date('Y') ?> </td>
                                         <td> Otto </td>
                                         <td> makr124 </td>
                                     </tr>
-                                    <tr>
-                                        <td> 2 </td>
-                                        <td> Jacob </td>
-                                        <td> Nilson </td>
-                                        <td> jac123 </td>
-                                    </tr>
+                                    <?php
+                                }
+                                ?>
                                 </tbody>
                             </table>
                         </div>

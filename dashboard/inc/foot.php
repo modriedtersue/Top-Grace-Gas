@@ -222,6 +222,9 @@
 <script src="../assets/plugins/material/material.min.js"></script>
 <script src="../assets/js/pages/material-select/getmdl-select.js"></script>
 <!-- Data Table -->
+<script src="../assets/plugins/material-datetimepicker/moment-with-locales.min.js"></script>
+<script src="../assets/plugins/material-datetimepicker/bootstrap-material-datetimepicker.js"></script>
+<script src="../assets/plugins/material-datetimepicker/datetimepicker.js"></script>
 <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js"></script>
 <script src="../assets/plugins/datatables/export/dataTables.buttons.min.js"></script>

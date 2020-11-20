@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89f0278b-37cf-4049-8c94-9be2ada3c70b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard/pages/admin/TC_collect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/pages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/inc/foot.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/foot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/inc/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/inc/inc_insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/inc_insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/inc/inc_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/inc_update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/pages/admin/collections.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/pages/admin/collections.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/pages/admin/transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/pages/admin/transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/pages/admin/view_user_transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/pages/admin/view_user_transaction.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +59,7 @@
       <workItem from="1602082782767" duration="579000" />
       <workItem from="1602348674244" duration="25000" />
       <workItem from="1603972559187" duration="191000" />
+      <workItem from="1605862000053" duration="3509000" />
     </task>
     <servers />
   </component>
@@ -68,5 +75,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="517" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1603972627081" />
+    <state x="346" y="89" key="search.everywhere.popup" timestamp="1605862020309">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1605862020309" />
   </component>
 </project>

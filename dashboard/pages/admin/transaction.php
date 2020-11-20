@@ -39,20 +39,23 @@
                                                     <tbody>
                                                     <?php
                                                     $no = 1;
+                                                    $total = '';
                                                     $run = $this->run("SELECT * FROM `transactions`");
                                                     while ($row = $this->fetch($run)){
+                                                        $total .= $row['total_amount'];
                                                         ?>
                                                         <tr class="odd gradeX">
                                                             <td> <?php  echo $no++; ?></td>
                                                             <td> <?php echo $row['tran_customer_id'] ?></td>
                                                             <td> <?php echo $row['kg']  ?></td>
-                                                            <td> <?php echo $this->format_money($row['price'],true) ?></td>
+                                                            <td> <?php echo $this->format_money($row['kg_price'],true) ?></td>
                                                             <td> <?php  echo $this->format_money($row['total_amount'],true) ?></td>
-                                                            <td> <?php echo $row['date'];  ?></td>
+                                                            <td> <?php echo $row['date_sort'];  ?></td>
                                                         </tr>
                                                         <?php
                                                     }
                                                     ?>
+
                                                     </tbody>
                                                 </table>
                                             </div>

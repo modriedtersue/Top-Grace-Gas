@@ -49,9 +49,6 @@ if(empty($_GET['customer_serial_number'])){
                                                         <th> Price </th>
                                                         <th> KG </th>
                                                         <th> Total Amount </th>
-                                                        <th> Plan </th>
-                                                        <th> amount </th>
-                                                        <th> status </th>
                                                         <th> Date </th>
                                                     </tr>
                                                     </thead>
@@ -63,13 +60,10 @@ if(empty($_GET['customer_serial_number'])){
                                                         ?>
                                                         <tr class="odd gradeX">
                                                             <td> <?php  echo $no++; ?></td>
-                                                            <td> <?php echo $this->format_money($row['price'],true) ?></td>
+                                                            <td> <?php echo $this->format_money($row['kg_price'],true) ?></td>
                                                             <td> <?php echo $row['kg']; ?></td>
                                                             <td> <?php  echo $this->format_money($row['total_amount'],true) ?></td>
-                                                            <td> <?php echo $this->plan_status($row['c_id']);  ?></td>
-                                                            <td> <?php  echo $this->format_money($row['c_amount'],true) ?>
-                                                            <td> <?php  echo $this->settle_status($row['c_status'],true) ?></td>
-                                                            <td> <?php echo $row['date'];  ?></td>
+                                                            <td> <?php echo $row['date_sort'];  ?></td>
                                                         </tr>
                                                         <?php
                                                     }

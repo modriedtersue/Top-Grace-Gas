@@ -13,7 +13,7 @@ $main->user_not_login('login.php');
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="SmartUniversity" />
-    <title>University</title>
+    <title> <?php $pages->get_pages_title(); ?></title>
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
     <!-- icons -->
@@ -41,6 +41,8 @@ $main->user_not_login('login.php');
     <link href="../assets/css/theme/light/style.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/theme/light/theme-color.css" rel="stylesheet" type="text/css" />
+    <!-- Date Time item CSS -->
+	<link rel="stylesheet" href="../assets/plugins/material-datetimepicker/bootstrap-material-datetimepicker.css" />
     <!-- favicon -->
     <!-- <link rel="shortcut icon" href="http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico" /> -->
     <style>
@@ -298,18 +300,6 @@ $main->user_not_login('login.php');
                                 <span></span>
                             </div>
                         </li>
-                        <li class="sidebar-user-panel">
-                            <div class="user-panel">
-                                <div class="pull-left image">
-                                    <img src="../assets/img/dp.jpg" class="img-circle user-img-circle"
-                                         alt="User Image" />
-                                </div>
-                                <div class="pull-left info">
-                                    <p><?php echo $main->select('admin','admin_id',$_SESSION['login_user_id'],'username')?></p>
-                                    <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">Online</span></a>
-                                </div>
-                            </div>
-                        </li>
                         <li class="nav-item <?php echo $pages->active("index");?>">
                             <a href="." class="nav-link nav-toggle"> <i class="material-icons">dashboard</i>
                                 <span class="title">Dashboard</span>
@@ -326,52 +316,60 @@ $main->user_not_login('login.php');
                             </a>
                         </li>
                         <li class="nav-item  <?php echo $pages->active("customer_add");?>">
-                            <a href="?p=customer_add" class="nav-link nav-toggle"> <i class="fa fa-user-plus"></i>
-                                <span class="title">Add Customer</span>
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">people</i>
+                                <span class="title">Customers</span> <span class="arrow"></span>
                             </a>
-                        </li>
-                        <li class="nav-item  <?php echo $pages->active("customer_all");?>">
-                            <a href="?p=customer_all" class="nav-link nav-toggle"> <i class="fa fa-users"></i>
-                                <span class="title">All Customer</span>
-                            </a>
-                        </li>
-                        <li class="nav-item <?php echo $pages->active("change_password");?>">
-                            <a href="?p=change_password" class="nav-link nav-toggle"> <i class="icon-lock"></i>
-                                <span class="title">Change Password</span>
-                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="?p=customer_add" class="nav-link "> <span class="title">Add Customer</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="?p=customer_all" class="nav-link "> <span class="title">All Customer</span> </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item <?php echo $pages->active("add_admin");?>">
-                            <a href="?p=add_admin" class="nav-link nav-toggle"> <i class="icon-lock"></i>
-                                <span class="title">Add Admin </span>
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Administrators</span> <span class="arrow"></span>
                             </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="?p=add_admin" class="nav-link "> <span class="title">Add Admin</span> </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="?p=all_admin" class="nav-link "> <span class="title">All Admin</span> </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item <?php echo $pages->active("all_admin");?>">
-                            <a href="?p=all_admin" class="nav-link nav-toggle"> <i class="icon-lock"></i>
-                                <span class="title">All Admin </span>
-                            </a>
-                        </li>
+                       
                         <?php
                         if($_SESSION['login_user_type'] == 'super'){
                             ?>
-                            <li class="nav-item <?php echo $pages->active("admin_settings");?>">
-                                <a href="?p=admin_settings" class="nav-link nav-toggle"> <i class="icon-settings"></i>
-                                    <span class="title"> Admin  Settings </span>
-                                </a>
-                            </li>
                             <li class="nav-item <?php echo $pages->active("collection");?>">
-                                <a href="?p=collections" class="nav-link nav-toggle"> <i class="icon-settings"></i>
+                                <a href="?p=collections" class="nav-link nav-toggle"> <i class="material-icons"> monetization_on</i>
                                     <span class="title"> scollections </span>
                                 </a>
                             </li>
+                            <li class="nav-item <?php echo $pages->active("admin_settings");?>">
+                                <a href="?p=admin_settings" class="nav-link nav-toggle"> <i class="material-icons">face</i>
+                                    <span class="title"> Admin  Settings </span>
+                                </a>
+                            </li>
+
                             <?php
                         }else  if($_SESSION['login_user_type'] == 'admin'){
                           ?>
                         <?php
                         }
                         ?>
-
+                        <li class="nav-item <?php echo $pages->active("change_password");?>">
+                            <a href="?p=change_password" class="nav-link nav-toggle"> <i class="icon-lock"></i>
+                                <span class="title">Change Password</span>
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <a href="pages/logout.php" class="nav-link nav-toggle"> <i class="material-icons">dashboard</i>
+                            <a href="pages/logout.php" class="nav-link nav-toggle"> <i class="fa fa-sign-out"></i>
                                 <span class="title">Logout</span>
                             </a>
                         </li>
