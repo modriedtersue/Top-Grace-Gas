@@ -146,7 +146,7 @@
                             <i class="fa fa-dollar"></i>
                         </div>
                         <div class="value white">
-                            <p class="sbold addr-font-h1" data-counter="counterup" data-value="48"> <?php echo $this-> concession_pay_status(); ?></p>
+                            <p class="sbold addr-font-h1" data-counter="counterup" data-value="48"> <?php echo 7686 // $this-> concession_pay_status(); ?></p>
                             <p>PAID</p>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                             <i class="fa fa-dollar"></i>
                         </div>
                         <div class="value white">
-                            <p class="sbold addr-font-h1" data-counter="counterup" data-value="14"><?php echo $this-> concession_outstanding_status(); ?></p>
+                            <p class="sbold addr-font-h1" data-counter="counterup" data-value="14"><?php echo 5465// $this-> concession_outstanding_status(); ?></p>
                             <p>OUTSTANDING</p>
                         </div>
                     </div>
