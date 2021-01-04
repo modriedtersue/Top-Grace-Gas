@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2020 at 12:00 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: Jan 04, 2021 at 08:23 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -45,29 +46,31 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`admin_id`, `username`, `password`, `name`, `address`, `phone`, `email`, `user_type`, `status`) VALUES
 (2, 'Modried', 'f970e2767d0cfe75876ea857f92e319b', 'Zungwe', 'Lyon street km4', '0908383883883', 'zungwemodried@gmail.com', 'admin', 1),
-(3, 'Mary', '6b2ded51d81a4403d8a4bd25fa1e57ee', 'Job', 'sdsd', '09049494994', 'Maryjob@gmail.com', 'super', 1);
+(3, 'Mary', 'f970e2767d0cfe75876ea857f92e319b', 'Job', 'sdsd', '09049494994', 'Maryjob@gmail.com', 'super', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `concession`
+-- Table structure for table `concession_payout`
 --
 
-CREATE TABLE `concession` (
-  `concession_id` int(11) NOT NULL,
-  `hash` varchar(20) NOT NULL,
-  `plan_id` int(11) NOT NULL,
-  `amount` varchar(5) NOT NULL,
-  `date` date NOT NULL,
+CREATE TABLE `concession_payout` (
+  `payout_id` int(11) NOT NULL,
+  `amout` decimal(4,0) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `date_sort` date NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `concession`
+-- Dumping data for table `concession_payout`
 --
 
-INSERT INTO `concession` (`concession_id`, `hash`, `plan_id`, `amount`, `date`, `status`) VALUES
-(1, '3434', 4, '3', '0000-00-00', 0);
+INSERT INTO `concession_payout` (`payout_id`, `amout`, `customer_id`, `admin_id`, `date_sort`, `status`) VALUES
+(7, '500', 28, 3, '2021-01-04', 1),
+(8, '500', 28, 3, '2021-01-04', 1),
+(9, '500', 29, 3, '2021-01-04', 1);
 
 -- --------------------------------------------------------
 
@@ -94,8 +97,27 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_serial_number`, `customer_number`, `customer_gender`, `customer_name`, `customer_email`, `customer_address`, `customer_plan_id`, `customer_card`, `customer_date`, `customer_status`) VALUES
-(28, 'TG-771767', '09049494994', 'Male', 'akin', 'alumnus@venus.com', 'km4', 2, '', '2020-10-14 09:40:50', 1),
-(29, 'TG-765689', '009494994', 'Male', 'Lyon', 'eliakimmodried@gmail.com', '74834783478347 jdjjsdjd', 1, '', '2020-11-12 11:10:41', 1);
+(28, 'TG-771767', '09049494994', 'Male', 'akin', 'alumnus@venus.com', 'km4', 2, '1400', '2021-01-04 13:02:31', 1),
+(29, 'TG-765689', '009494994', 'Male', 'Lyon', 'eliakimmodried@gmail.com', '74834783478347 jdjjsdjd', 1, '4500', '2021-01-04 10:17:58', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gas_volume`
+--
+
+CREATE TABLE `gas_volume` (
+  `volume_id` int(11) NOT NULL,
+  `volume` varchar(10) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gas_volume`
+--
+
+INSERT INTO `gas_volume` (`volume_id`, `volume`, `status`) VALUES
+(1, '100000', 0);
 
 -- --------------------------------------------------------
 
@@ -114,8 +136,8 @@ CREATE TABLE `plans` (
 --
 
 INSERT INTO `plans` (`plan_id`, `plan`, `plan_status`) VALUES
-(1, 'Instant', 1),
-(2, 'Save', 1);
+(1, 'Save', 1),
+(2, 'Instant', 1);
 
 -- --------------------------------------------------------
 
@@ -167,6 +189,9 @@ INSERT INTO `set_kg_price` (`kg_id`, `done`, `dtwo`, `price`, `status`) VALUES
 
 CREATE TABLE `transactions` (
   `transaction_id` int(11) NOT NULL,
+  `plan_id` int(11) NOT NULL,
+  `plan_amount` decimal(4,0) NOT NULL,
+  `plan_status` int(11) NOT NULL DEFAULT 0,
   `kg_price` varchar(5) NOT NULL,
   `kg` varchar(20) NOT NULL,
   `total_amount` varchar(10) NOT NULL,
@@ -180,11 +205,22 @@ CREATE TABLE `transactions` (
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`transaction_id`, `kg_price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`, `date_sort`, `status`) VALUES
-(155, '275.4', '4', '1101.6', 'TG-765689', 7, '2020-11-20', 0),
-(156, '275.4', '4', '1101.6', 'TG-771767', 7, '2020-11-20', 0),
-(157, '183.5', '12', '2202', 'TG-771767', 7, '2020-11-20', 0),
-(158, '275.4', '7', '1927.8', 'TG-771767', 7, '2020-11-20', 0);
+INSERT INTO `transactions` (`transaction_id`, `plan_id`, `plan_amount`, `plan_status`, `kg_price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`, `date_sort`, `status`) VALUES
+(169, 1, '100', 1, '275.4', '5', '1377', 'TG-765689', 2, '2021-01-04', 0),
+(170, 1, '100', 1, '275.4', '7', '1927.8', 'TG-765689', 2, '2021-01-04', 0),
+(171, 1, '0', 0, '275.4', '4', '1101.6', 'TG-765689', 2, '2021-01-04', 0),
+(172, 2, '100', 1, '275.4', '5', '1377', 'TG-771767', 2, '2021-01-04', 0),
+(173, 2, '100', 1, '275.4', '6', '1652.4', 'TG-771767', 2, '2021-01-04', 0),
+(174, 2, '0', 0, '275.4', '4', '1101.6', 'TG-771767', 2, '2021-01-04', 0),
+(175, 1, '100', 1, '275.4', '6', '1652.4', 'TG-771767', 3, '2021-01-04', 0),
+(176, 1, '100', 2, '275.4', '6', '1652.4', 'TG-771767', 3, '2021-01-04', 0),
+(177, 1, '100', 2, '175.5', '92', '16146', 'TG-771767', 3, '2021-01-04', 0),
+(178, 1, '100', 2, '275.4', '5', '1377', 'TG-771767', 3, '2021-01-04', 0),
+(179, 1, '100', 2, '175.5', '44', '7722', 'TG-771767', 3, '2021-01-04', 0),
+(180, 2, '100', 1, '275.4', '5', '1377', 'TG-771767', 3, '2021-01-04', 0),
+(181, 1, '100', 1, '275.4', '7', '1927.8', 'TG-765689', 3, '2021-01-04', 0),
+(182, 1, '100', 1, '183.5', '8', '1468', 'TG-765689', 3, '2021-01-04', 0),
+(183, 1, '100', 1, '183.5', '8', '1468', 'TG-765689', 3, '2021-01-04', 0);
 
 --
 -- Indexes for dumped tables
@@ -197,16 +233,22 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `concession`
+-- Indexes for table `concession_payout`
 --
-ALTER TABLE `concession`
-  ADD PRIMARY KEY (`concession_id`);
+ALTER TABLE `concession_payout`
+  ADD PRIMARY KEY (`payout_id`);
 
 --
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`);
+
+--
+-- Indexes for table `gas_volume`
+--
+ALTER TABLE `gas_volume`
+  ADD PRIMARY KEY (`volume_id`);
 
 --
 -- Indexes for table `plans`
@@ -243,16 +285,22 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `concession`
+-- AUTO_INCREMENT for table `concession_payout`
 --
-ALTER TABLE `concession`
-  MODIFY `concession_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `concession_payout`
+  MODIFY `payout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `gas_volume`
+--
+ALTER TABLE `gas_volume`
+  MODIFY `volume_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `plans`
@@ -276,7 +324,7 @@ ALTER TABLE `set_kg_price`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
