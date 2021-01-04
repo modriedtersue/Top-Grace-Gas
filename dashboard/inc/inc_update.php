@@ -2,6 +2,15 @@
 require_once ("../../controller/Controller.php");
 if(isset($_GET['update']) && $_GET['update'] !== ""){
     switch ($_GET['update']){
+        case "plan_payout":
+            $id = $main->clean($_POST['id']);
+            $customer_serial = $main->select('customers','customer_id',$id,'customer_serial_number');
+            $amount = $main->plan_balance($customer_serial);
+            $date_sort =  date('Y-m-d');
+                  $main->run("UPDATE `transactions` SET `plan_status` = '1' WHERE `plan_status`='2' AND `tran_customer_id` ='$customer_serial'");
+            echo  $main->run("INSERT INTO `concession_payout` (`payout_id`, `amout`, `customer_id`, `admin_id`, `date_sort`, `status`) VALUES (NULL, '$amount', '$id', '". $_SESSION['login_user_id']."', '$date_sort', '1');")?1:0;
+
+            break;
         case "admin_login_user":
             $username = $main->clean($_POST['username']);
             $password = $main->clean($_POST['password']);

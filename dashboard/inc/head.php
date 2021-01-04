@@ -348,7 +348,7 @@ $main->user_not_login('login.php');
                             ?>
                             <li class="nav-item <?php echo $pages->active("collection");?>">
                                 <a href="?p=collections" class="nav-link nav-toggle"> <i class="material-icons"> monetization_on</i>
-                                    <span class="title"> scollections </span>
+                                    <span class="title"> Sales Collection </span>
                                 </a>
                             </li>
                             <li class="nav-item <?php echo $pages->active("admin_settings");?>">

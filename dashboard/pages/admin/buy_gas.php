@@ -7,7 +7,8 @@
                     <div class="page-title">Gas List</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
-                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href=".">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href=".">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
                     <li><a class="parent-item" href="?p=buy_gas">Gas</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
@@ -30,11 +31,11 @@
                                                     <thead>
                                                     <tr>
                                                         <th> # </th>
-                                                        <th> Customer ID </th>
-                                                        <th> Name </th>
+                                                        <th> Name (Customer ID) </th>
                                                         <th> Plan </th>
-                                                        <th> Transaction </th>
                                                         <th> Buy </th>
+                                                        <th> BALANCE </th>
+                                                        <th> Transaction </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -42,22 +43,36 @@
                                                     $no = 1;
                                                     $run = $this->run("SELECT * FROM `customers` WHERE `customer_status`='1'");
                                                     while ($row = $this->fetch($run)){
+
                                                         ?>
                                                         <tr class="odd gradeX">
                                                             <td> <?php  echo $no++; ?></td>
-                                                            <td> <?php echo $row['customer_serial_number'] ?></td>
-                                                            <td> <?php echo $row['customer_name']  ?></td>
+                                                            <td><?php echo $row['customer_name']  ?>  ( <?php echo $row['customer_serial_number'] ?> )</td>
                                                             <td> <?php echo $this->plan_status($row['customer_plan_id']);  ?></td>
-                                                            <td>
-                                                                <a href="?p=view_user_transaction&customer_serial_number=<?php echo $row['customer_serial_number'];  ?>&id=<?php echo $row['customer_id'];?>" class="btn btn-success btn-xs" onclick="func_buy_gas_modal(<?php echo $row['customer_id'];?>)">
-                                                                  View Transaction
-                                                                </a>
-                                                            </td>
                                                             <td>
                                                                 <button class="btn btn-danger btn-xs" onclick="func_buy_gas_modal(<?php echo $row['customer_id'];?>)">
                                                                     Buy Gas
                                                                 </button>
                                                             </td>
+                                                            <td>
+                                                                <?php
+                                                                    if($this->plan_balance($row['customer_serial_number']) >= 500){
+                                                                       ?>
+                                                                        <button class="btn btn-success  btn-xs" id="btn_payout_<?php echo $row['customer_id'] ?>" onclick="func_payout_plan(<?php echo $row['customer_id'] ?>);"> PayOut <?php echo $this->format_money($this->plan_balance($row['customer_serial_number']),true) ?> </button>
+                                                                <?php
+                                                                    }else{
+                                                                        ?>
+                                                                        <button class="btn btn-primary  btn-xs"> PayOut <?php echo $this->format_money($this->plan_balance($row['customer_serial_number']),true) ?> </button>
+                                                                        <?php
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <td>
+                                                                <a href="?p=view_user_transaction&customer_serial_number=<?php echo $row['customer_serial_number'];  ?>&id=<?php echo $row['customer_id'];?>" class="btn btn-success btn-xs" onclick="func_buy_gas_modal(<?php echo $row['customer_id'];?>)">
+                                                                  View Transaction
+                                                                </a>
+                                                            </td>
+
                                                         </tr>
                                                         <?php
                                                     }

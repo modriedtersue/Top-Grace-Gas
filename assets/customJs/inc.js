@@ -1,3 +1,38 @@
+
+function func_payout_plan(id) {
+    var id = parseInt(id);
+    var btn = $("#btn_payout_" + id);
+    swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this imaginary record!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes, Pay out !",
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+        function (isConfirm) {
+            if (isConfirm == true) {
+                AjaxSendData("inc/inc_update.php?update=plan_payout", {id: id}, btn, " Paying... ").done(function (response) {
+                    if (response == 1) {
+                        swal("Paid!", "Successfully", "success");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 5000);
+                    } else {
+                        swal("Unpaid", "Unsuccessfully:)", "error");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 5000);
+                    }
+                });
+            } else {
+                swal("Cancelled", "Your imaginary record is safe :)", "error");
+            }
+        });
+}
 $("#admin_update_form").validate({
     // Specify validation rules
     rules: {
