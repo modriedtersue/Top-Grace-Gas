@@ -46,6 +46,9 @@ if(empty($_GET['customer_serial_number'])){
                                                     <thead>
                                                     <tr>
                                                         <th> # </th>
+                                                        <th> Plan  </th>
+                                                        <th> Plan Amount </th>
+                                                        <th> Status </th>
                                                         <th> Price </th>
                                                         <th> KG </th>
                                                         <th> Total Amount </th>
@@ -60,6 +63,9 @@ if(empty($_GET['customer_serial_number'])){
                                                         ?>
                                                         <tr class="odd gradeX">
                                                             <td> <?php  echo $no++; ?></td>
+                                                            <td> <?php echo $this->plan_status($row['plan_id']) ?></td>
+                                                            <td><?php echo $this->format_money($row['plan_amount'],true)  ?></td>
+                                                            <td><?php echo $this->settle_status($row['plan_status']); ?></td>
                                                             <td> <?php echo $this->format_money($row['kg_price'],true) ?></td>
                                                             <td> <?php echo $row['kg']; ?></td>
                                                             <td> <?php  echo $this->format_money($row['total_amount'],true) ?></td>

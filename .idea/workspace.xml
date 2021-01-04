@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89f0278b-37cf-4049-8c94-9be2ada3c70b" name="Default" comment="dashboard updated">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/customJs/inc.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/customJs/inc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/inc/inc_insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/inc_insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/inc/inc_update.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/inc/inc_update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/pages/admin/buy_gas.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/pages/admin/buy_gas.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/pages/admin/view_user_transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/pages/admin/view_user_transaction.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +66,7 @@
       <workItem from="1608440553629" duration="2618000" />
       <workItem from="1609665895362" duration="1277000" />
       <workItem from="1609753365635" duration="1507000" />
+      <workItem from="1609769432656" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="dashboard updated">
       <created>1605914552808</created>

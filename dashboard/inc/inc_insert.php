@@ -38,12 +38,12 @@ if(isset($_GET['insert']) && $_GET['insert'] !== ""){
             $hash = time();
             $date_sort =  date('Y-m-d');
             if($kg < 5){
-                echo  $main->run("INSERT INTO `transactions` (`kg_price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`,`date_sort`) VALUES ('$price','$kg', '$amount', '$customer_id', '".$_SESSION['login_user_id']."','$date_sort')")?1:0;
+                echo  $main->run("INSERT INTO `transactions` (`plan_id`,`plan_amount`,`plan_status`,`kg_price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`,`date_sort`) VALUES ('$plan_id','0.00',0,'$price','$kg', '$amount', '$customer_id', '".$_SESSION['login_user_id']."','$date_sort')")?1:0;
             }elseif($plan_id == 2 && $kg >= 5){
-                echo  $main->run("INSERT INTO `transactions` (`kg_price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`,`date_sort`) VALUES ('$price','$kg', '$amount', '$customer_id', '".$_SESSION['login_user_id']."','$date_sort')")?1:0;
+                echo  $main->run("INSERT INTO `transactions` (`plan_id`,`plan_amount`,`plan_status`,`kg_price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`,`date_sort`) VALUES ('$plan_id','$get_concession',1,'$price','$kg', '$amount', '$customer_id', '".$_SESSION['login_user_id']."','$date_sort')")?1:0;
 
             }elseif ($plan_id == 1 && $kg >= 5){
-                echo  $main->run("INSERT INTO `transactions` (`kg_price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`,`date_sort`) VALUES ('$price','$kg', '$amount', '$customer_id', '".$_SESSION['login_user_id']."','$date_sort')")?1:0;
+                echo  $main->run("INSERT INTO `transactions` (`plan_id`,`plan_amount`,`plan_status`,`kg_price`, `kg`, `total_amount`, `tran_customer_id`, `admin_id`,`date_sort`) VALUES ('$plan_id','$get_concession',2,'$price','$kg', '$amount', '$customer_id', '".$_SESSION['login_user_id']."','$date_sort')")?1:0;
     
             }else{
                 echo 0;

@@ -48,6 +48,12 @@ class MainController extends  DatabaseConnect{
         }
 
     }
+    public function plan_balance($user_id){
+        $run2 = $this->run("SELECT SUM(`plan_amount`) AS plan_amunt FROM `transactions` WHERE `plan_status`='2'AND `tran_customer_id`='$user_id'");
+        $row2 = $this->fetch($run2);
+        return $row2['plan_amunt'];
+    }
+
     public function RowCount($run){
         $query = $this->run($run);
         return $this->rows($query);
@@ -79,16 +85,16 @@ class MainController extends  DatabaseConnect{
 
     public function plan_status($var){
         if($var == 1){
-            $status = '<span class="label label-sm label-success"> Instant</span>';
+            $status = '<span class="label label-sm label-success"> Save</span>';
         }else if($var == 2){
-            $status = '<span class="label label-sm label-primary">Save</span>';
+            $status = '<span class="label label-sm label-primary"> Instant</span>';
         }
         return $status;
     }
     public function settle_status($var){
         if($var == 1){
             $status = '<span class="label label-sm label-success">Paid </span>';
-        }else if($var == 0){
+        }else if($var == 2 ){
             $status = '<span class="label label-sm label-primary"> Outstanding</span>';
         }else{
             $status = '<span class="label label-sm label-danger"> None </span>';
